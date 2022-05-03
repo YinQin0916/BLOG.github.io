@@ -4,13 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="阿里巴巴主流数据库连接池Druid入门, YinQin">
-    <meta name="description" content="阿里巴巴主流数据库连接池Druid入门一.数据库连接池的必要性(一).传统数据库连接模式的的步骤        1.在主程序中创建连接
-    2.进行sql操作
-
-    3.关闭数据库连接
-
-（二）.传统数据库连接模式存在的问题1.浪费">
+    <meta name="keywords" content="SpringBoot+Vue+mybatis-pus Demo, YinQin">
+    <meta name="description" content="链接：https://gitee.com/yzzyq2001916/druid-spring-boot.git
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +20,7 @@
 
     
 
-    <title>阿里巴巴主流数据库连接池Druid入门 | YinQin</title>
+    <title>SpringBoot+Vue+mybatis-pus Demo | YinQin</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -314,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">阿里巴巴主流数据库连接池Druid入门</h1>
+                    <h1 class="description center-align post-title">SpringBoot+Vue+mybatis-pus Demo</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JAVA/">
-                                <span class="chip bg-color">JAVA</span>
+                            <a href="/tags/SpringBoot/">
+                                <span class="chip bg-color">SpringBoot</span>
                             </a>
                         
                     </div>
@@ -460,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-01
+                    2022-05-03
                 </div>
                 
 
@@ -481,38 +477,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="阿里巴巴主流数据库连接池Druid入门"><a href="#阿里巴巴主流数据库连接池Druid入门" class="headerlink" title="阿里巴巴主流数据库连接池Druid入门"></a>阿里巴巴主流数据库连接池Druid入门</h1><p>一.数据库连接池的必要性<br>(一).传统数据库连接模式的的步骤<br>        1.在主程序中创建连接</p>
-<pre><code>    2.进行sql操作
-
-    3.关闭数据库连接
-</code></pre>
-<p>（二）.传统数据库连接模式存在的问题<br>1.浪费时间：每次连接时都要验证登录和将conn加载到内存，</p>
-<p>2.不能大规模的访问数据库：当数据库访问人数过多时，占用大量系统资源，会导致服务器崩溃</p>
-<p>3.存在内存泄漏问题：每次连接都需要断开连接，如果不断开，程序运行结束，会有创建的连接对象存在内存中一直无法关闭，就会导致java内存泄漏的问题。</p>
-<p>内存泄漏：指创建的对象无法被回收</p>
-<p>二.数据库连接池技术<br>(一).数据连接池的思想：<br>事先在内存中建立一个缓冲池，用来存放一定数量的连接对象，需要时在里面调用，结束时放回缓冲池。</p>
-<p>（二）.数据库连接池的任务：<br>管理和释放数据库连接，允许用户使用池内的连接对象，而不需要创建对象。</p>
-<p>（三）.数据库连接池的规模：<br>初始化时的数量：由数据库最小连接数来设定；</p>
-<p>最大数量：由最大数据库连接数来确定。</p>
-<p>当连接数超过了最大连接数，超过的连接就会停止等待连接对象的释放。</p>
-<p>(四).工作原理：</p>
-<p> （五）.数据库连接池的优点：<br>1.资源重用：<br>连接池中的对象需要时取出，不需要被连接池回收</p>
-<p>2.更快的反应速度：<br>事先在池中储备连接对象，初始化已经完成，直接调用。</p>
-<p>3.数据库共享机制<br>多个用户访问同一数据库，通过在应用层的配置，可以避免资源独占。</p>
-<p>4.避免内存泄漏：<br>连接对象统一管理，设置连接对象时间片，超时强制回收。</p>
-<p>三.多种开源的数据库连接池<br>JDBC的数据库连接池使用javax.sql.DataSource来表示，DataSource是一个接口，该接口通常由服务器提供。</p>
-<p>（一）.常见的开源数据库连接池：</p>
-<p>DBCP：速度比C3P0快但有bug</p>
-<p>c3p0:速度慢，但相对稳定</p>
-<p>Proxool：开源连接池，有监控连接池的功能，但稳定性比C3P0差</p>
-<p>BoneCP：速度快，开源</p>
-<p>Druid：阿里提供的连接池，速度快（不及BoneCP），稳定性好，有监控连接池的功能。</p>
-<p>四.学习最主流的数据库连接池Druid<br>（一）.为druid数据库连接池创建properties文件<br>driverClassName&#x3D;com.mysql.cj.jdbc.Driver<br>url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;jdbc_db<br>username&#x3D;root<br>password&#x3D;yzzyq2001916<br>initialSize&#x3D;10<br>maxActive&#x3D;20<br>（二）.创建数据库连接池<br>public Class JDBCUtils{<br>   private static DataSource source;<br>    static {<br>        try{<br>            &#x2F;&#x2F;创建properties对象，用来封装从文件中获取的流数据<br>            Properties pros &#x3D; new Properties();<br>            &#x2F;&#x2F;采用类加载方式获取文件的内容，并封装成流<br>            InputStream is &#x3D; ClassLoader.getSystemClassLoader().getResourceAsStream(“Druid.properties”);<br>            &#x2F;&#x2F;将流传入到pros对象中<br>            pros.load(is);<br>            &#x2F;&#x2F;利用工厂类创建数据库连接池<br>            source &#x3D; DruidDataSourceFactory.createDataSource(pros);<br>        }catch (Exception e){<br>            e.printStackTrace();<br>        }<br>    }<br>    public static Connection getConnByDruid() throws Exception {<br>        &#x2F;&#x2F;所有的数据连接池要想被java所使用，都必须先实现sun公司提供的一个接口DateSource<br>        &#x2F;&#x2F;获取数据库连接池对象<br>        Connection conn &#x3D; source.getConnection();<br>        return conn;<br>    }<br>}<br>(三).测试通过数据库连接池获取连接对象<br>public class TestDruid {<br>    @Test<br>    public void getDruidConn() throws Exception {<br>        Properties pros &#x3D; new Properties();<br>        InputStream is &#x3D; ClassLoader.getSystemClassLoader().getResourceAsStream(“Druid.properties”);<br>        pros.load(is);<br>        &#x2F;&#x2F;所有的数据连接池要想被java所使用，都必须先实现sun公司提供的一个接口DateSource<br>        &#x2F;&#x2F;获取数据库连接池对象<br>        DataSource source &#x3D; DruidDataSourceFactory.createDataSource(pros);<br>        Connection conn &#x3D; source.getConnection();<br>        System.out.println(conn);</p>
-<pre><code>&#125;
-</code></pre>
-<p>}<br>（四）.测试结果（创建成功）</p>
-<p>五.Druid数据库连接池常见配置参数</p>
-<p><img src="https://img-blog.csdnimg.cn/61b9ae6ca6784ba1866a0e120d215550.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5L2Z5omv,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+                <p>链接：<a target="_blank" rel="noopener" href="https://gitee.com/yzzyq2001916/druid-spring-boot.git">https://gitee.com/yzzyq2001916/druid-spring-boot.git</a></p>
 
                 
             </div>
@@ -539,7 +504,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yinqin0916.github.io/2022/05/01/JAVA/">https://yinqin0916.github.io/2022/05/01/JAVA/</a>
+                    <a href="https://yinqin0916.github.io/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/">https://yinqin0916.github.io/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,8 +542,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JAVA/">
-                                    <span class="chip bg-color">JAVA</span>
+                                <a href="/tags/SpringBoot/">
+                                    <span class="chip bg-color">SpringBoot</span>
                                 </a>
                             
                         </div>
@@ -749,7 +714,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2022-05-01T17-34-17',
+        id: '2022-05-03T22-23-58',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -773,7 +738,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun May 01 2022 17:34:17 GMT+0800',
+    id: 'Tue May 03 2022 22:23:58 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -798,9 +763,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://yinqin0916.github.io/2022/05/01/JAVA/';
-        this.page.identifier = '/2022/05/01/JAVA/';
-        this.page.title = '阿里巴巴主流数据库连接池Druid入门';
+        this.page.url = 'https://yinqin0916.github.io/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/';
+        this.page.identifier = '/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/';
+        this.page.title = 'SpringBoot+Vue+mybatis-pus Demo';
     };
     let disqus_shortname = '';
 
@@ -854,9 +819,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/">
                     <div class="card-image">
@@ -874,9 +840,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -889,6 +855,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -907,13 +874,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/30/hello-world/">
+                <a href="/2022/05/01/JAVA/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="你好">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="阿里巴巴主流数据库连接池Druid入门">
                         
-                        <span class="card-title">你好</span>
+                        <span class="card-title">阿里巴巴主流数据库连接池Druid入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -924,15 +891,27 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            等花开
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JAVA/">
+                        <span class="chip bg-color">JAVA</span>
+                    </a>
+                    
                 </div>
                 
             </div>
