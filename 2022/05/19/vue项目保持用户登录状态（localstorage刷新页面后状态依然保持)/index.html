@@ -4,9 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringBoot+Vue+mybatis-pus Demo, YinQin">
-    <meta name="description" content="链接：https://gitee.com/yzzyq2001916/druid-spring-boot.git
-">
+    <meta name="keywords" content="vue项目保持用户登录状态（localstorage刷新页面后状态依然保持）, YinQin">
+    <meta name="description" content=" 在前端项目开发中，实现用户的登陆注册功能时常常会有一个问题，那就是我们设置的登录状态，在浏览器页面刷新后就消失了，这其实只是因为
+我们没有保存用户状态。
+
+涉及要点：
+
+state 属性(状态)用于添加多个组件共享的变量，作用类似于 vu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@
 
     
 
-    <title>SpringBoot+Vue+mybatis-pus Demo | YinQin</title>
+    <title>vue项目保持用户登录状态（localstorage刷新页面后状态依然保持） | YinQin</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SpringBoot+Vue+mybatis-pus Demo</h1>
+                    <h1 class="description center-align post-title">vue项目保持用户登录状态（localstorage刷新页面后状态依然保持）</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SpringBoot/">
-                                <span class="chip bg-color">SpringBoot</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -443,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -456,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-03
+                    2022-05-19
                 </div>
                 
 
@@ -477,7 +481,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>链接：<a target="_blank" rel="noopener" href="https://gitee.com/yzzyq2001916/druid-spring-boot.git">https://gitee.com/yzzyq2001916/druid-spring-boot.git</a></p>
+                <p> 在前端项目开发中，实现用户的登陆注册功能时常常会有一个问题，那就是我们设置的登录状态，在浏览器页面刷新后就消失了，这其实只是因为</p>
+<h2 id="我们没有保存用户状态。"><a href="#我们没有保存用户状态。" class="headerlink" title="我们没有保存用户状态。"></a>我们没有保存用户状态。</h2><p><img src="https://img-blog.csdnimg.cn/6497319587ec49709c82059fe26e0ca3.gif"></p>
+<blockquote>
+<p>涉及要点：</p>
+<blockquote>
+<p>state 属性(状态)用于添加多个组件共享的变量，作用类似于 vue 中的 data；</p>
+</blockquote>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/6150a8ee3ea8417cb3226d45f7d559f9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBARGV2ZWxvcGVyIOWwj-mprA==,size_19,color_FFFFFF,t_70,g_se,x_16"><br>2. 在登录页面中，判断登录成功后创建对象 userInfo{ }，并添加描述登录状态的各属性，然后将该对象分别存入 localStorage 和 vuex;</p>
+<blockquote>
+<p>涉及要点：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>localStorage 属性允许访问 Document 源的 Storage 对象，存储的数据保存在浏览器会话中；<br>与 sessionStorage 的唯一区别就是 localStorage 属于永久性存储，除非我们手动清除，而 sessionStorage 属于临时存储，浏览器关闭后便会被清空。</p>
+<blockquote>
+<p>存：localStorage.setItem(‘myCat’, ‘Tom’);<br>取：var cat &#x3D; localStorage.getItem(“myCat”);<br>删：localStorage.removeItem(“myCat”); 或 localStorage.clear(“myCat”);<br>JSON.stringify() 系列化对象，将返回的对象类型转为字符串类型；<br>this.$store.state，取 vuex 中 state 中的属性，如：this.$store.state.userInfo &#x3D; userInfo &#x2F;&#x2F;取出 vuex 中的 userInfo 并赋值为新的 userInfo</p>
+</blockquote>
+</blockquote>
+</blockquote>
 
                 
             </div>
@@ -504,7 +527,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yinqin0916.github.io/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/">https://yinqin0916.github.io/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/</a>
+                    <a href="https://yinqin0916.github.io/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E4%BF%9D%E6%8C%81%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81%EF%BC%88localstorage%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2%E5%90%8E%E7%8A%B6%E6%80%81%E4%BE%9D%E7%84%B6%E4%BF%9D%E6%8C%81)/">https://yinqin0916.github.io/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E4%BF%9D%E6%8C%81%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81%EF%BC%88localstorage%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2%E5%90%8E%E7%8A%B6%E6%80%81%E4%BE%9D%E7%84%B6%E4%BF%9D%E6%8C%81)/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -542,8 +565,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/SpringBoot/">
-                                    <span class="chip bg-color">SpringBoot</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -714,7 +737,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2022-05-03T22-23-58',
+        id: '2022-05-19T10-40-15',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -738,7 +761,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Tue May 03 2022 22:23:58 GMT+0800',
+    id: 'Thu May 19 2022 10:40:15 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -763,9 +786,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://yinqin0916.github.io/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/';
-        this.page.identifier = '/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/';
-        this.page.title = 'SpringBoot+Vue+mybatis-pus Demo';
+        this.page.url = 'https://yinqin0916.github.io/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E4%BF%9D%E6%8C%81%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81%EF%BC%88localstorage%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2%E5%90%8E%E7%8A%B6%E6%80%81%E4%BE%9D%E7%84%B6%E4%BF%9D%E6%8C%81)/';
+        this.page.identifier = '/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E4%BF%9D%E6%8C%81%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81%EF%BC%88localstorage%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2%E5%90%8E%E7%8A%B6%E6%80%81%E4%BE%9D%E7%84%B6%E4%BF%9D%E6%8C%81)/';
+        this.page.title = 'vue项目保持用户登录状态（localstorage刷新页面后状态依然保持）';
     };
     let disqus_shortname = '';
 
@@ -819,9 +842,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E4%BF%9D%E6%8C%81%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81%EF%BC%88localstorage%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2%E5%90%8E%E7%8A%B6%E6%80%81%E4%BE%9D%E7%84%B6%E4%BF%9D%E6%8C%81)/">
                     <div class="card-image">
@@ -839,9 +863,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -854,6 +878,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -872,13 +897,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/05/01/JAVA/">
+                <a href="/2022/05/03/SpringBoot-Vue-mybatis-pus-Demo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="阿里巴巴主流数据库连接池Druid入门">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="SpringBoot+Vue+mybatis-pus Demo">
                         
-                        <span class="card-title">阿里巴巴主流数据库连接池Druid入门</span>
+                        <span class="card-title">SpringBoot+Vue+mybatis-pus Demo</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -889,7 +914,7 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-03
                             </span>
                         <span class="publish-author">
                             
@@ -906,8 +931,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JAVA/">
-                        <span class="chip bg-color">JAVA</span>
+                    <a href="/tags/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                 </div>
